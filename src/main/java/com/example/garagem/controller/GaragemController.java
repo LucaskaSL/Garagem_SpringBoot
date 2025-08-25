@@ -13,11 +13,12 @@ public class GaragemController {
     private Garagem minhaGaragem;
 
     public GaragemController() {
-        minhaGaragem = new Garagem("Coração");
+        minhaGaragem = new Garagem();
+        minhaGaragem.setNome("Coração");
 
         Carro carrinho = new Carro("Uno", "Volkswagen", "Azul", 1989, 4, "ABC-1234");
         Carro carrinho2 = new Carro("Kwid", "Chevrolet", "Preto", 2001, 4, "DEF-5678");
-        Carro carrinho3 = new Carro("Fusca", "Volkswagen", "Cinza", 2010, 3, "GHI-9012");
+        Carro carrinho3 = new Carro("Fusca", "Volkswagen", "Cinza", 2010, 2, "GHI-9012");
 
         minhaGaragem.adicionar_carro(carrinho);
         minhaGaragem.adicionar_carro(carrinho2);

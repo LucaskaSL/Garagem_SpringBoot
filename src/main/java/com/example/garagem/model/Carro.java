@@ -30,44 +30,4 @@ public class Carro extends Veiculos{
         setModelo(modelo);
         setQuantidade_portas(quantidade_portas);
     }
-
-    @Override
-    public void exibirDados(){
-        super.exibirDados();
-        System.out.println("Modelo: " + getModelo());
-        System.out.println("Quantidade de portas: " + getQuantidade_portas());
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        // 1. Primeiro, verifica se os atributos da superclasse (Veiculo) são iguais.
-        // O super.equals já faz as verificações de identidade, nulidade e tipo.
-        if (this == obj){
-            return true;
-        }
-        if (!super.equals(obj)) {
-            return false;
-        }
-        // 2. Se a parte do Veiculo for igual, agora compara os atributos específicos do Carro.
-        Carro other = (Carro) obj;
-        return this.quantidade_portas == other.quantidade_portas &&
-                Objects.equals(this.modelo, other.modelo);
-    }
-
-    @Override
-    public int hashCode() {
-        // Combina o hashCode da superclasse com o dos atributos do Carro.
-        return Objects.hash(super.hashCode(), modelo, quantidade_portas);
-    }
-
-    @Override
-    public String toString() {
-        // Você pode formatar a string como quiser. Este é um formato comum.
-        return "Carro[Placa=" + placa +
-                ", Modelo=" + modelo +
-                ", Marca=" + marca +
-                ", Cor=" + cor +
-                ", Ano=" + ano_criacao +
-                ", Portas=" + quantidade_portas + "]";
-    }
 }
