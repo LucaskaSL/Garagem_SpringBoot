@@ -5,9 +5,13 @@ import java.util.*;
 public class Garagem{
     private String nome;
     private ArrayList<Carro> carros;
+    private ArrayList<Onibus> onibus;
+    private ArrayList<Moto> motos;
 
     public Garagem(){
         this.carros = new ArrayList<>();
+        this.onibus = new ArrayList<>();
+        this.motos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -27,8 +31,41 @@ public class Garagem{
         }
     }
 
+    public void remover_carro(Carro carro){
+        this.carros.remove(carro);
+    }
+
+    public void adicionar_onibus(Onibus onibus){
+        if (onibus != null && onibus.getPlaca() != null && !onibus.getPlaca().isEmpty()) {
+            this.onibus.add(onibus);
+        } else {
+            System.out.println("Erro: Não é possível adicionar um onibus sem placa à garagem.");
+        }
+    }
+
+    public void remover_onibus(Onibus onibus){
+        this.onibus.remove(onibus);
+    }
+
+    public void adicionar_motos(Moto moto){
+        if (motos != null && moto.getPlaca() != null && !moto.getPlaca().isEmpty()) {
+            this.motos.add(moto);
+        } else {
+            System.out.println("Erro: Não é possível adicionar um motos sem placa à garagem.");
+        }
+    }
+
+    public void remover_motos(Moto moto){
+        this.motos.remove(moto);
+    }
+
     public List<Carro> getCarros() {
         return carros;
     }
+    public List<Onibus> getOnibus() {return onibus;}
+    public List<Moto> getMotos() {
+        return motos;
+    }
+
 }
 

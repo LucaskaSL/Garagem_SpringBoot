@@ -28,9 +28,9 @@ public class Moto extends Veiculos{
         return modelo;
     }
 
-    public Moto(String marca, String cor, int ano_criacao, String placa, int cilindrada, String modelo) {
+    public Moto(String modelo, String marca, String cor, int ano_criacao, int cilindrada, String placa) {
         super(marca, cor, ano_criacao, placa);
-        setCilindrada(cilindrada);
         setModelo(modelo);
+        setCilindrada(cilindrada);
     }
 }

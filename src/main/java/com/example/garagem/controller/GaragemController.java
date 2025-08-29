@@ -1,6 +1,8 @@
 package com.example.garagem.controller;
 
 import com.example.garagem.model.Carro;
+import com.example.garagem.model.Moto;
+import com.example.garagem.model.Onibus;
 import com.example.garagem.model.Garagem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,19 +21,32 @@ public class GaragemController {
         Carro carrinho = new Carro("Uno", "Volkswagen", "Azul", 1989, 4, "ABC-1234");
         Carro carrinho2 = new Carro("Kwid", "Chevrolet", "Preto", 2001, 4, "DEF-5678");
         Carro carrinho3 = new Carro("Fusca", "Volkswagen", "Cinza", 2010, 2, "GHI-9012");
+        Onibus onibus = new Onibus("Urbano", "MarcoPolo", "Azul", 2020, 50, "ABC-1234");
+        Moto moto = new Moto("Scooter", "Honda", "Vermelha", 1990, 4, "JDK-1234");
+        Moto moto2 = new Moto("Bis", "Honda", "Rosa", 1980, 40, "ROS-4321");
 
         minhaGaragem.adicionar_carro(carrinho);
         minhaGaragem.adicionar_carro(carrinho2);
         minhaGaragem.adicionar_carro(carrinho3);
+        //minhaGaragem.remover_carro(carrinho);
+        minhaGaragem.adicionar_onibus(onibus);
+        //minhaGaragem.remover_onibus(onibus);
+        minhaGaragem.adicionar_motos(moto);
+        minhaGaragem.adicionar_motos(moto2);
+        //minhaGaragem.remover_motos(moto);
     }
 
     @GetMapping("/") // Acessar http://localhost:8080/
     public String exibirPaginaDaGaragem(Model model) {
 
         List<Carro> listaDeCarros = minhaGaragem.getCarros();
+        List<Onibus> listaDeOnibus = minhaGaragem.getOnibus();
+        List<Moto> listaDeMotos = minhaGaragem.getMotos();
 
         //Envia a lista de carros E o nome da garagem para o HTML.
         model.addAttribute("carrosDaGaragem", listaDeCarros);
+        model.addAttribute("onibusDaGaragem", listaDeOnibus);
+        model.addAttribute("motosDaGaragem", listaDeMotos);
         model.addAttribute("nomeDaGaragem", minhaGaragem.getNome());
 
         //Diz ao Spring para renderizar o arquivo "index.html".

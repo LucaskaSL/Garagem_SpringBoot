@@ -6,11 +6,34 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 2em; background-color: #f4f4f9; }
         h1 { color: #333; }
-        table { border-collapse: collapse; width: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            table-layout: fixed;
+            margin-bottom: 2em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         thead { background-color: #007bff; color: white; }
         tbody tr:nth-child(even) { background-color: #f2f2f2; }
         tbody tr:hover { background-color: #e2e6ea; }
+
+        .col-placa   { width: 15%; }
+        .col-modelo  { width: 25%; }
+        .col-marca   { width: 20%; }
+        .col-cor     { width: 15%; }
+        .col-ano     { width: 10%; }
+        .col-detalhe { width: 15%; }
     </style>
 </head>
 <body>
@@ -19,22 +42,68 @@
 <table>
     <thead>
     <tr>
-        <th>Placa</th>
-        <th>Modelo</th>
-        <th>Marca</th>
-        <th>Cor</th>
-        <th>Ano</th>
-        <th>Portas</th>
+        <th class="col-placa">Placa</th>
+        <th class="col-modelo">Modelo</th>
+        <th class="col-marca">Marca</th>
+        <th class="col-cor">Cor</th>
+        <th class="col-ano">Ano</th>
+        <th class="col-detalhe">Portas</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="carro : ${carrosDaGaragem}">
-        <td th:text="${carro.placa}">ABC-0000</td>
-        <td th:text="${carro.modelo}">Modelo</td>
-        <td th:text="${carro.marca}">Marca</td>
-        <td th:text="${carro.cor}">Cor</td>
-        <td th:text="${carro.ano_criacao}">1900</td>
-        <td th:text="${carro.quantidade_portas}">0</td>
+        <td class="col-placa" th:text="${carro.placa}">ABC-0000</td>
+        <td class="col-modelo" th:text="${carro.modelo}">Modelo</td>
+        <td class="col-marca" th:text="${carro.marca}">Marca</td>
+        <td class="col-cor" th:text="${carro.cor}">Cor</td>
+        <td class="col-ano" th:text="${carro.ano_criacao}">1900</td>
+        <td class="col-detalhe" th:text="${carro.quantidade_portas}">0</td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th class="col-placa">Placa</th>
+        <th class="col-modelo">Modelo</th>
+        <th class="col-marca">Marca</th>
+        <th class="col-cor">Cor</th>
+        <th class="col-ano">Ano</th>
+        <th class="col-detalhe">Cilindrada</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="moto : ${motosDaGaragem}">
+        <td class="col-placa" th:text="${moto.placa}">ABC-0000</td>
+        <td class="col-modelo" th:text="${moto.modelo}">Modelo</td>
+        <td class="col-marca" th:text="${moto.marca}">Marca</td>
+        <td class="col-cor" th:text="${moto.cor}">Cor</td>
+        <td class="col-ano" th:text="${moto.ano_criacao}">1900</td>
+        <td class="col-detalhe" th:text="${moto.cilindrada}">0</td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th class="col-placa">Placa</th>
+        <th class="col-modelo">Modelo</th>
+        <th class="col-marca">Marca</th>
+        <th class="col-cor">Cor</th>
+        <th class="col-ano">Ano</th>
+        <th class="col-detalhe">Cilindrada</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="onibus : ${onibusDaGaragem}">
+        <td class="col-placa" th:text="${onibus.placa}">ABC-0000</td>
+        <td class="col-modelo" th:text="${onibus.modelo}">Modelo</td>
+        <td class="col-marca" th:text="${onibus.marca}">Marca</td>
+        <td class="col-cor" th:text="${onibus.cor}">Cor</td>
+        <td class="col-ano" th:text="${onibus.ano_criacao}">1900</td>
+        <td class="col-detalhe" th:text="${onibus.quantidade_passageiros}">0</td>
     </tr>
     </tbody>
 </table>
