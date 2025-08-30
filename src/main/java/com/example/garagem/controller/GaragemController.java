@@ -1,5 +1,6 @@
 package com.example.garagem.controller;
 
+import com.example.garagem.model.Caminhao;
 import com.example.garagem.model.Carro;
 import com.example.garagem.model.Moto;
 import com.example.garagem.model.Onibus;
@@ -24,7 +25,10 @@ public class GaragemController {
         Onibus onibus = new Onibus("Urbano", "MarcoPolo", "Azul", 2020, 50, "ABC-1234");
         Moto moto = new Moto("Scooter", "Honda", "Vermelha", 1990, 4, "JDK-1234");
         Moto moto2 = new Moto("Bis", "Honda", "Rosa", 1980, 40, "ROS-4321");
+        Caminhao caminhao1 = new Caminhao("Actros", "Mercedes", "Preto", 1980, 2, "ROS-4321");
+        Caminhao caminhao2 = new Caminhao("Alfa Romeo", "Fiat", "Preto", 1980, 2, "ROS-4321");
 
+        
         minhaGaragem.adicionar_carro(carrinho);
         minhaGaragem.adicionar_carro(carrinho2);
         minhaGaragem.adicionar_carro(carrinho3);
@@ -34,6 +38,9 @@ public class GaragemController {
         minhaGaragem.adicionar_motos(moto);
         minhaGaragem.adicionar_motos(moto2);
         //minhaGaragem.remover_motos(moto);
+        minhaGaragem.adicionar_caminhoes(caminhao1);
+        minhaGaragem.adicionar_caminhoes(caminhao2);
+        // minhaGaragem.remover_caminhao(caminhao2);
     }
 
     @GetMapping("/") // Acessar http://localhost:8080/
@@ -42,11 +49,13 @@ public class GaragemController {
         List<Carro> listaDeCarros = minhaGaragem.getCarros();
         List<Onibus> listaDeOnibus = minhaGaragem.getOnibus();
         List<Moto> listaDeMotos = minhaGaragem.getMotos();
+        List<Caminhao> listaDeCaminhoes = minhaGaragem.getCaminhoes();
 
         //Envia a lista de carros E o nome da garagem para o HTML.
         model.addAttribute("carrosDaGaragem", listaDeCarros);
         model.addAttribute("onibusDaGaragem", listaDeOnibus);
         model.addAttribute("motosDaGaragem", listaDeMotos);
+        model.addAttribute("caminhoesDaGaragem", listaDeCaminhoes);
         model.addAttribute("nomeDaGaragem", minhaGaragem.getNome());
 
         //Diz ao Spring para renderizar o arquivo "index.html".
