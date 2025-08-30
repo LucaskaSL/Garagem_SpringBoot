@@ -7,11 +7,13 @@ public class Garagem{
     private ArrayList<Carro> carros;
     private ArrayList<Onibus> onibus;
     private ArrayList<Moto> motos;
+    private ArrayList<Caminhao> caminhoes;
 
     public Garagem(){
         this.carros = new ArrayList<>();
         this.onibus = new ArrayList<>();
         this.motos = new ArrayList<>();
+        this.caminhoes = new ArrayList<>();
     }
 
     public String getNome() {
@@ -59,12 +61,27 @@ public class Garagem{
         this.motos.remove(moto);
     }
 
+    public void adicionar_caminhoes(Caminhao caminhao){
+        if (caminhoes != null && caminhao.getPlaca() != null && !caminhao.getPlaca().isEmpty()) {
+            this.caminhoes.add(caminhao);
+        } else {
+            System.out.println("Erro: Não é possível adicionar um motos sem placa à garagem.");
+        }
+    }
+
+    public void remover_caminhao(Caminhao caminhao){
+        this.caminhoes.remove(caminhao);
+    }
+
     public List<Carro> getCarros() {
         return carros;
     }
     public List<Onibus> getOnibus() {return onibus;}
     public List<Moto> getMotos() {
         return motos;
+    }
+    public List<Caminhao> getCaminhoes(){
+        return caminhoes;
     }
 
 }
