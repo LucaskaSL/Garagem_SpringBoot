@@ -108,5 +108,28 @@
     </tbody>
 </table>
 
+<table>
+    <thead>
+    <tr>
+        <th class="col-placa">Placa</th>
+        <th class="col-modelo">Modelo</th>
+        <th class="col-marca">Marca</th>
+        <th class="col-cor">Cor</th>
+        <th class="col-ano">Ano</th>
+        <th class="col-detalhe">Portas</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="caminhao : ${caminhoesDaGaragem}">
+        <td class="col-placa" th:text="${caminhao.placa}">ABC-0000</td>
+        <td class="col-modelo" th:text="${caminhao.modelo}">Modelo</td>
+        <td class="col-marca" th:text="${caminhao.marca}">Marca</td>
+        <td class="col-cor" th:text="${caminhao.cor}">Cor</td>
+        <td class="col-ano" th:text="${caminhao.ano_criacao}">1900</td>
+        <td class="col-detalhe" th:text="${caminhao.quantidade_portas}">0</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
