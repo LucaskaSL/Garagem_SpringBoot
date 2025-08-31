@@ -1,10 +1,5 @@
 package com.example.garagem.model;
 
-import com.example.garagem.model.Caminhao;
-import com.example.garagem.model.Carro;
-import com.example.garagem.model.Moto;
-import com.example.garagem.model.Onibus;
-import com.example.garagem.model.Garagem;
 import java.util.*;
 
 public class Funcionario extends Pessoa {
@@ -79,5 +74,8 @@ public class Funcionario extends Pessoa {
         this.caminhoes.remove(caminhao);
     }
 
-
+    public List<Carro> getCarros() {return carros;}
+    public List<Onibus> getOnibus() {return onibus;}
+    public List<Moto> getMotos() {return motos;}
+    public List<Caminhao> getCaminhoes(){return caminhoes;}
 }

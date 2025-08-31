@@ -7,6 +7,11 @@
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 2em; background-color: #f4f4f9; }
         h1 { color: #333; }
 
+        h2 {
+            color: #333;
+            padding-left: 2px;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -39,6 +44,7 @@
 <body>
 <h1 th:text="${nomeDaGaragem}">Nome da Garagem</h1>
 
+<h2>Carros</h2>
 <table>
     <thead>
     <tr>
@@ -62,6 +68,7 @@
     </tbody>
 </table>
 
+<h2>Motos</h2>
 <table>
     <thead>
     <tr>
@@ -85,6 +92,7 @@
     </tbody>
 </table>
 
+<h2>Onibus</h2>
 <table>
     <thead>
     <tr>
@@ -108,6 +116,7 @@
     </tbody>
 </table>
 
+<h2>Caminhões</h2>
 <table>
     <thead>
     <tr>
@@ -116,7 +125,7 @@
         <th class="col-marca">Marca</th>
         <th class="col-cor">Cor</th>
         <th class="col-ano">Ano</th>
-        <th class="col-detalhe">Portas</th>
+        <th class="col-detalhe">Peso da Carga (Kg)</th>
     </tr>
     </thead>
     <tbody>
@@ -126,7 +135,7 @@
         <td class="col-marca" th:text="${caminhao.marca}">Marca</td>
         <td class="col-cor" th:text="${caminhao.cor}">Cor</td>
         <td class="col-ano" th:text="${caminhao.ano_criacao}">1900</td>
-        <td class="col-detalhe" th:text="${caminhao.quantidade_portas}">0</td>
+        <td class="col-detalhe" th:text="${caminhao.peso_carga}">0</td>
     </tr>
     </tbody>
 </table>

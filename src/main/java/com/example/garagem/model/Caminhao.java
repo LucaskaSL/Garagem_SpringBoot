@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Caminhao extends Veiculos{
     private String modelo;
-    private int quantidade_portas;
+    private int peso_carga;
 
     public String getModelo(){
         return modelo;
@@ -16,19 +16,19 @@ public class Caminhao extends Veiculos{
         }
     }
 
-    public int getQuantidade_portas(){
-        return quantidade_portas;
+    public int getPeso_carga(){
+        return peso_carga;
     }
 
-    public void setQuantidade_portas(int quantidade_portas){
-        if(quantidade_portas > 0){
-            this.quantidade_portas = quantidade_portas;
+    public void setPeso_carga(int peso_carga){
+        if(peso_carga > 0){
+            this.peso_carga = peso_carga;
         }
     }
 
-    public Caminhao(String modelo, String marca, String cor, int ano_criacao, int quantidade_portas, String placa){
+    public Caminhao(String modelo, String marca, String cor, int ano_criacao, int peso_carga, String placa){
         super(marca, cor, ano_criacao, placa);
         setModelo(modelo);
-        setQuantidade_portas(quantidade_portas);
+        setPeso_carga(peso_carga);
     }
 }
