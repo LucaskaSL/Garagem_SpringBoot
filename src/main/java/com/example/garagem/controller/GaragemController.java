@@ -5,6 +5,7 @@ import com.example.garagem.model.Carro;
 import com.example.garagem.model.Moto;
 import com.example.garagem.model.Onibus;
 import com.example.garagem.model.Garagem;
+import com.example.garagem.model.Funcionario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,19 +29,20 @@ public class GaragemController {
         Caminhao caminhao1 = new Caminhao("Actros", "Mercedes", "Preto", 1980, 2, "ROS-4321");
         Caminhao caminhao2 = new Caminhao("Alfa Romeo", "Fiat", "Preto", 1980, 2, "ROS-4321");
 
+        Funcionario funcionario = new Funcionario("Roberto", "08037661571", 32, "Masculino", 1500.58);
         
-        minhaGaragem.adicionar_carro(carrinho);
-        minhaGaragem.adicionar_carro(carrinho2);
-        minhaGaragem.adicionar_carro(carrinho3);
-        //minhaGaragem.remover_carro(carrinho);
-        minhaGaragem.adicionar_onibus(onibus);
-        //minhaGaragem.remover_onibus(onibus);
-        minhaGaragem.adicionar_motos(moto);
-        minhaGaragem.adicionar_motos(moto2);
-        //minhaGaragem.remover_motos(moto);
-        minhaGaragem.adicionar_caminhoes(caminhao1);
-        minhaGaragem.adicionar_caminhoes(caminhao2);
-        // minhaGaragem.remover_caminhao(caminhao2);
+        funcionario.adicionar_carro(carrinho);
+        funcionario.adicionar_carro(carrinho2);
+        funcionario.adicionar_carro(carrinho3);
+        //funcionario.remover_carro(carrinho);
+        funcionario.adicionar_onibus(onibus);
+        //funcionario.remover_onibus(onibus);
+        funcionario.adicionar_motos(moto);
+        funcionario.adicionar_motos(moto2);
+        //funcionario.remover_motos(moto);
+        funcionario.adicionar_caminhoes(caminhao1);
+        funcionario.adicionar_caminhoes(caminhao2);
+        // funcionario.remover_caminhao(caminhao2);
     }
 
     @GetMapping("/") // Acessar http://localhost:8080/
