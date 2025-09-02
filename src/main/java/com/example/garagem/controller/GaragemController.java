@@ -22,18 +22,19 @@ public class GaragemController {
         minhaGaragem.setNome("Garagem do seu Jorge");
 
         Carro carrinho = new Carro("Uno", "Volkswagen", "Azul", 1989, 4, "ABC-1234");
-        Carro carrinho2 = new Carro("Kwid", "Chevrolet", "Preto", 2001, 4, "DEF-5678");
+        Carro carrinho2 = new Carro("Kwid", "Chevrolet", "Preto", 2001, 4, "ABC-1234");
         Carro carrinho3 = new Carro("Fusca", "Volkswagen", "Cinza", 2010, 2, "GHI-9012");
+        Carro carrinho4 = new Carro("Fusca", "Volkswagen", "Cinza", 2010, 2, "");
         Onibus onibus = new Onibus("Urbano", "MarcoPolo", "Azul", 2020, 50, "ABC-1234");
         Moto moto = new Moto("Scooter", "Honda", "Vermelha", 1990, 4, "JDK-1234");
         Moto moto2 = new Moto("Bis", "Honda", "Rosa", 1980, 40, "ROS-4321");
         Caminhao caminhao1 = new Caminhao("Actros", "Mercedes", "Preto", 1980, 200, "ROS-4321");
         Caminhao caminhao2 = new Caminhao("Alfa Romeo", "Fiat", "Preto", 1980, 250, "ROS-4321");
 
-
         funcionario.adicionar_carro(carrinho);
         funcionario.adicionar_carro(carrinho2);
         funcionario.adicionar_carro(carrinho3);
+        funcionario.adicionar_carro(carrinho4);
         //funcionario.remover_carro(carrinho);
         funcionario.adicionar_onibus(onibus);
         //funcionario.remover_onibus(onibus);

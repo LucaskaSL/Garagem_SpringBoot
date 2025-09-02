@@ -8,6 +8,10 @@ public class Funcionario extends Pessoa {
     private ArrayList<Onibus> onibus;
     private ArrayList<Moto> motos;
     private ArrayList<Caminhao> caminhoes;
+    private HashSet<String> placas_registradas_carros;
+    private HashSet<String> placas_registradas_onibus;
+    private HashSet<String> placas_registradas_motos;
+    private HashSet<String> placas_registradas_caminhoes;
 
     public double getSalario(){
         return this.salario;
@@ -24,13 +28,21 @@ public class Funcionario extends Pessoa {
         this.onibus = new ArrayList<>();
         this.motos = new ArrayList<>();
         this.caminhoes = new ArrayList<>();
+        this.placas_registradas_carros = new HashSet<>();
+        this.placas_registradas_onibus = new HashSet<>();
+        this.placas_registradas_motos = new HashSet<>();
+        this.placas_registradas_caminhoes = new HashSet<>();
     }
 
     public void adicionar_carro(Carro carro){
-        if (carros != null && carro.getPlaca() != null && !carro.getPlaca().isEmpty()) {
+        if(carro.getPlaca() == null) {
+            System.out.println("Não é possível adicionar um carro sem placa à garagem.");
+            return;
+        } if (placas_registradas_carros.add(carro.getPlaca())){
             this.carros.add(carro);
-        } else {
-            System.out.println("Erro: Não é possível adicionar um carro sem placa à garagem.");
+            System.out.println("Carro adicionado com sucesso!");
+        } else{
+            System.out.println("Erro: A placa " + carro.getPlaca() + " já está cadastrada em outro carro.");
         }
     }
 
@@ -39,10 +51,14 @@ public class Funcionario extends Pessoa {
     }
 
     public void adicionar_onibus(Onibus onibus){
-        if (onibus != null && onibus.getPlaca() != null && !onibus.getPlaca().isEmpty()) {
+        if(onibus.getPlaca() == null) {
+            System.out.println("Não é possível adicionar um ônibus sem placa à garagem.");
+            return;
+        } if (placas_registradas_onibus.add(onibus.getPlaca())){
             this.onibus.add(onibus);
-        } else {
-            System.out.println("Erro: Não é possível adicionar um onibus sem placa à garagem.");
+            System.out.println("Ônibus adicionado com sucesso!");
+        } else{
+            System.out.println("Erro: A placa " + onibus.getPlaca() + " já está cadastrada em outro ônibus.");
         }
     }
 
@@ -51,10 +67,14 @@ public class Funcionario extends Pessoa {
     }
 
     public void adicionar_motos(Moto moto){
-        if (motos != null && moto.getPlaca() != null && !moto.getPlaca().isEmpty()) {
+        if(moto.getPlaca() == null) {
+            System.out.println("Não é possível adicionar uma moto sem placa à garagem.");
+            return;
+        } if (placas_registradas_motos.add(moto.getPlaca())){
             this.motos.add(moto);
-        } else {
-            System.out.println("Erro: Não é possível adicionar um motos sem placa à garagem.");
+            System.out.println("Moto adicionada com sucesso!");
+        } else{
+            System.out.println("Erro: A placa " + moto.getPlaca() + " já está cadastrada em outra moto.");
         }
     }
 
@@ -63,10 +83,14 @@ public class Funcionario extends Pessoa {
     }
 
     public void adicionar_caminhoes(Caminhao caminhao){
-        if (caminhoes != null && caminhao.getPlaca() != null && !caminhao.getPlaca().isEmpty()) {
+        if(caminhao.getPlaca() == null) {
+            System.out.println("Não é possível adicionar um caminhão sem placa à garagem.");
+            return;
+        } if (placas_registradas_caminhoes.add(caminhao.getPlaca())){
             this.caminhoes.add(caminhao);
-        } else {
-            System.out.println("Erro: Não é possível adicionar um motos sem placa à garagem.");
+            System.out.println("Caminhão adicionado com sucesso!");
+        } else{
+            System.out.println("Erro: A placa " + caminhao.getPlaca() + " já está cadastrada em outro caminhão.");
         }
     }
 
